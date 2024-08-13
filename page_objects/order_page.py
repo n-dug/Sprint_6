@@ -6,29 +6,29 @@ from page_objects.base_page import BasePage
 class OrderPage(BasePage):
     @allure.step('Send customer name')
     def send_name_to_name_input(self, text):
-        self.send_text_to_field(OrderPageLocators.name_input_field, text)
+        self.send_text_to_field(OrderPageLocators.NAME_INPUT_FIELD, text)
 
     @allure.step('Send last name')
     def send_last_name_to_last_name_input(self, text):
-        self.send_text_to_field(OrderPageLocators.last_name_input_field, text)
+        self.send_text_to_field(OrderPageLocators.LAST_NAME_INPUT_FIELD, text)
 
     @allure.step('Send delivery address')
     def send_address_to_address_input(self, text):
-        self.send_text_to_field(OrderPageLocators.address_input_field, text)
+        self.send_text_to_field(OrderPageLocators.ADDRESS_INPUT_FIELD, text)
 
     @allure.step('Send station')
     def send_subway_to_station_input(self, text):
-        self.click_on_element(OrderPageLocators.station_input_field)
-        self.send_text_to_field(OrderPageLocators.station_input_field, text)
-        self.click_on_element(OrderPageLocators.chosen_station_field)
+        self.click_on_element(OrderPageLocators.STATION_INPUT_FIELD)
+        self.send_text_to_field(OrderPageLocators.STATION_INPUT_FIELD, text)
+        self.click_on_element(OrderPageLocators.CHOSEN_STATION_FIELD)
 
     @allure.step('Send phone number')
     def send_phone_number_to_number_input_field(self, text):
-        self.send_text_to_field(OrderPageLocators.phone_number_input_field, text)
+        self.send_text_to_field(OrderPageLocators.PHONE_NUMBER_INPUT_FIELD, text)
 
     @allure.step('Click on "Proceed" button of order form')
     def click_on_proceed_button(self):
-        self.click_on_element(OrderPageLocators.proceed_button)
+        self.click_on_element(OrderPageLocators.PROCEED_BUTTON)
 
     @allure.step('Complete 1st part of order form')
     def fill_order_form(self, user_1):
@@ -41,25 +41,25 @@ class OrderPage(BasePage):
 
     @allure.step('Set delivery date')
     def send_deliver_date_to_delivery_input(self, text):
-        self.click_on_element(OrderPageLocators.time_of_deliver_field)
-        self.send_text_to_field(OrderPageLocators.time_of_deliver_field, text)
+        self.click_on_element(OrderPageLocators.TIME_OF_DELIVER_FIELD)
+        self.send_text_to_field(OrderPageLocators.TIME_OF_DELIVER_FIELD, text)
 
     @allure.step('Set rent time')
     def rent_time_choose(self):
-        self.click_on_element(OrderPageLocators.rent_time_field)
-        self.click_on_element(OrderPageLocators.chosen_rent_time_field)
+        self.click_on_element(OrderPageLocators.RENT_TIME_FIELD)
+        self.click_on_element(OrderPageLocators.CHOSEN_RENT_TIME_FIELD)
 
     @allure.step('Set grey scooter color')
     def scooter_colour_choose(self):
-        self.click_on_element(OrderPageLocators.scooter_grey_check_box)
+        self.click_on_element(OrderPageLocators.SCOOTER_GREY_CHECK_BOX)
 
     @allure.step('Send comment for courier')
     def send_comment_to_comment_input(self, text):
-        self.send_text_to_field(OrderPageLocators.comment_for_courier_field, text)
+        self.send_text_to_field(OrderPageLocators.COMMENT_FOR_COURIER_FIELD, text)
 
     @allure.step('Click on "Order" button to complete order')
     def finish_order(self):
-        self.click_on_element(OrderPageLocators.complete_order_button)
+        self.click_on_element(OrderPageLocators.COMPLETE_ORDER_BUTTON)
 
     @allure.step('Completely fill second part of order form')
     def complete_filling_of_order_form(self, text):
@@ -71,7 +71,7 @@ class OrderPage(BasePage):
 
     @allure.step('Click "Yes" button')
     def click_yes(self):
-        self.click_on_element(OrderPageLocators.yes_button)
+        self.click_on_element(OrderPageLocators.YES_BUTTON)
 
     @allure.step('Confirm an order')
     def confirm_order(self, user_1):
@@ -81,4 +81,4 @@ class OrderPage(BasePage):
 
     @allure.step('Show popup of completed order')
     def show_order_completed_popup(self):
-        return self.find_visible_element(OrderPageLocators.order_completed_popup).is_displayed()
+        return self.find_visible_element(OrderPageLocators.ORDER_COMPLETED_POPUP).is_displayed()
